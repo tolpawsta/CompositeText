@@ -5,10 +5,16 @@ import by.tolpawsta.text.entity.composite.Text;
 
 public interface Builder {
     public Text build();
+
     public Builder withText(String value);
+
     public Builder withType(TextType type);
+
     public Builder withParts(TextType type);
-    public Builder withLetter();
+
+    public Builder withPunctuation(String value);
+
+    public Builder withWhiteSpace();
 
 
 }

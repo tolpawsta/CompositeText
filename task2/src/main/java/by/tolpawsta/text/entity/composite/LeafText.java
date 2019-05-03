@@ -7,11 +7,12 @@ import org.apache.log4j.Logger;
 import java.util.List;
 
 public class LeafText extends Text {
-public final Logger logger=Logger.getLogger(LeafText.class);
+    public final Logger logger = Logger.getLogger(LeafText.class);
+
     public LeafText(TextBuilder builder) {
-         super(builder);
-         this.type=builder.type;
-         this.value=builder.value;
+        super(builder);
+        this.type = builder.type;
+        this.value = builder.value;
     }
 
     public void addPart(Text text) {
@@ -31,11 +32,13 @@ public final Logger logger=Logger.getLogger(LeafText.class);
     }
 
     public void print() {
-         logger.info(value);
+        if (value != null)
+            logger.info(value);
 
     }
+
     @Override
-    public void accept(Visitor visitor, TextType type){
-        visitor.visitLeaf(this,type);
+    public void accept(Visitor visitor, TextType type) {
+        visitor.visit(this, type);
     }
 }

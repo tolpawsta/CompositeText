@@ -14,10 +14,11 @@ public class TextParser {
 
     private TextParser() {
     }
-    public List<String> parseText(String regularexpression,String text){
+
+    public List<String> parseText(String regularexpression, String text) {
         Pattern pattern = Pattern.compile(regularexpression);
         Matcher matcher = pattern.matcher(text);
-        List<String> foundvalues=new LinkedList<String>();
+        List<String> foundvalues = new LinkedList<String>();
         while (matcher.find()) {
             foundvalues.add(matcher.group());
         }
